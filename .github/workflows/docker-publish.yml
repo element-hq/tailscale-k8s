@@ -9,7 +9,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  REGISTRY_BASE_PATH: ghcr.io/${{ github.repository }}
   BASE_TAG: ${{ github.ref_name }}
   IMAGE_NAME: tailscale-k8s
 
@@ -36,7 +35,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v3
       with:
-        images: ${{ env.REGISTRY_BASE_PATH }}/${{ env.IMAGE_NAME }}
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
