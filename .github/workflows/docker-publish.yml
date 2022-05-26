@@ -1,4 +1,4 @@
-name: Jitsi Meet Docker Images
+name: Tailscale K8S Image
 
 on:
   push:
