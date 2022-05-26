@@ -3,6 +3,7 @@ name: Tailscale K8S Image
 on:
   push:
     branches: [ main, testing ]
+    tags: ["v*.*.*"]
   pull_request:
     branches: [ main, testing ]
 
