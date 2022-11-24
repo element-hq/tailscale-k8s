@@ -6,6 +6,11 @@ ROUTES="${ROUTES:-}"
 EXTRA_ARGS="${EXTRA_ARGS:-}"
 USERSPACE="${USERSPACE:-true}"
 
+# If AUTH_KEY is not in env, attempt to find it under $AUTH_KEY_LOCAL_PATH
+if [ -z "${AUTH_KEY}" ] && [ ! -z  "${AUTH_KEY_LOCAL_PATH}" ];  then
+	AUTH_KEY=$(cat ${AUTH_KEY_LOCAL_PATH})
+fi
+
 set -e
 
 TAILSCALED_ARGS="--socket=/tmp/tailscaled.sock"
