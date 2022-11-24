@@ -16,7 +16,7 @@ set -e
 TAILSCALED_ARGS="--socket=/tmp/tailscaled.sock"
 
 if [[ "${USERSPACE}" == "true" ]]; then
-  TAILSCALED_ARGS="${TAILSCALED_ARGS} --tun=userspace-networking"
+  TAILSCALED_ARGS="${TAILSCALED_ARGS} --tun=userspace-networking --outbound-http-proxy-listen=localhost:1055"
 else
   if [[ ! -d /dev/net ]]; then
     mkdir -p /dev/net
