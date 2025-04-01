@@ -1,3 +1,3 @@
-FROM ghcr.io/tailscale/tailscale:v1.80.3
+FROM ghcr.io/tailscale/tailscale:v1.82.0
 COPY run.sh /run.sh
 CMD "/run.sh"
